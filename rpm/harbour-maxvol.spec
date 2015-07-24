@@ -50,7 +50,7 @@ A simple app to set maximum volume
 
 %install
 rm -rf %{buildroot}
-#mkdir -p %{buildroot}/etc/systemd/user # Not allowed by harbour
+#mkdir -p %{buildroot}/etc/systemd/user # Not allowed in harbour
 #cp ../Maxvol/%{name}.service %{buildroot}/etc/systemd/user/
 # >> install pre
 # << install pre
@@ -71,7 +71,7 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-#/etc/systemd/user/%{name}.service # Not allowed by harbour
+#/etc/systemd/user/%{name}.service # Not allowed in harbour
 # >> files
 # << files
 
