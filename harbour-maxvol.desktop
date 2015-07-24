@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-maxvol
+Exec=harbour-maxvol
+Name=Maxvol
+# translation example:
+# your app name in German locale (de)
+Name[de]=Maxvol
+
