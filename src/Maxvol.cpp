@@ -37,6 +37,11 @@
 #include <QQuickView>
 #include <QProcess>
 #include <QStringList>
+#include <QSettings>
+#include <QString>
+#include <QDir>
+#include <QStandardPaths>
+#include <QCoreApplication>
 #include "volHelper.hpp"
 
 
@@ -56,10 +61,24 @@ int main(int argc, char *argv[])
     app->setApplicationName("harbour-maxvol");
     app->setApplicationVersion("0.1");
 
+    volHelper *vHelper = new volHelper();
+
+    if (QString(argv[1]) == "--autostart") {
+        vHelper->loadConfig();
+        exit(0);
+    }
+
+    QString config_dir = QDir(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation))
+                .filePath(QCoreApplication::applicationName());
+    QSettings settings(config_dir+"/settings.ini",QSettings::IniFormat);
+
+    settings.beginGroup("Global");
+    bool isAuto = settings.value("Autostart", "").toBool();
+    settings.endGroup();
+
     QQuickView *view = SailfishApp::createView();
     view->setSource(SailfishApp::pathTo("qml/Maxvol.qml"));
 
-    volHelper *vHelper = new volHelper();
     view->engine()->rootContext()->setContextProperty("_volHelper", vHelper);
 
     QObject *object = view->rootObject();
@@ -70,9 +89,10 @@ int main(int argc, char *argv[])
     process->waitForFinished(-1);
 
     QString p_stdout = process->readAllStandardOutput();
-    qDebug() << p_stdout.toInt();
+    //qDebug() << p_stdout.toInt();
 
     object->setProperty("curVol", p_stdout.toInt());
+    object->setProperty("autostart", isAuto);
 
     view->showFullScreen();
 

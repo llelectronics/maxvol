@@ -1,0 +1,10 @@
+[Unit]
+Description=Max Vol Volume Restore
+After=lipstick.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/harbour-maxvol --autostart
+
+[Install]
+WantedBy=default.target

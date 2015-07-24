@@ -735,7 +735,7 @@ Page {
                 id: setDefaultButton
                 width: parent.width
                 Label {
-                    text: qsTr("Set default value")
+                    text: qsTr("Restore default value")
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.leftMargin: Theme.paddingLarge
@@ -744,6 +744,14 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: setDefault();
             }
+//            TextSwitch {  // Not allowed by harbour
+//                id: isAutostart
+//                text: qsTr("Apply after every reboot")
+//                checked: mainWindow.autostart
+//                onCheckedChanged: {
+//                    mainWindow.autostart = checked
+//                }
+//            }
         }
     }
 }

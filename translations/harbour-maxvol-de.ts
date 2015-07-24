@@ -26,12 +26,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Set default value</source>
+        <source>Set maximum volume</source>
+        <translation>Maximum Lautstärke</translation>
+    </message>
+    <message>
+        <source>Restore default value</source>
         <translation>Standard wiederherstellen</translation>
     </message>
     <message>
-        <source>Set maximum volume</source>
-        <translation>Maximum Lautstärke</translation>
+        <source>Apply after every reboot</source>
+        <translation type="vanished">Übernehmen nach jedem Neustart</translation>
     </message>
 </context>
 </TS>

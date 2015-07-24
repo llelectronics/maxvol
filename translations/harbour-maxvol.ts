@@ -36,7 +36,7 @@
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="738"/>
-        <source>Set default value</source>
+        <source>Restore default value</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

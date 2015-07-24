@@ -40,6 +40,7 @@ ApplicationWindow
 
     property int maxVol
     property int curVol
+    property bool autostart
 
     property string version: "0.1"
     property string appname: "Max Vol"
@@ -49,6 +50,10 @@ ApplicationWindow
         console.debug("MaxVol now:" + maxVol)
         _volHelper.setMaxVol(maxVol)
         // Call C++ side here to execute the pactl command
+    }
+
+    onAutostartChanged: {
+        _volHelper.setAutostart(autostart);
     }
 
     initialPage: Component { FirstPage { } }
