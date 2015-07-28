@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>Apply after every reboot</source>
-        <translation type="vanished">Übernehmen nach jedem Neustart</translation>
+        <translation>Übernehmen nach jedem Neustart</translation>
     </message>
 </context>
 </TS>

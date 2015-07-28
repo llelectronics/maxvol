@@ -1,10 +1,11 @@
 [Unit]
 Description=Max Vol Volume Restore
+Requires=lipstick.service
 After=lipstick.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/harbour-maxvol --autostart
+ExecStart=/usr/bin/invoker -s --type=silica-qt5 /usr/bin/harbour-maxvol --autostart
 
 [Install]
-WantedBy=default.target
+WantedBy=post-user-session.target

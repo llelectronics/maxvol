@@ -13,7 +13,7 @@ Name:       harbour-maxvol
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Set maximum volume
-Version:    0.1
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -50,14 +50,14 @@ A simple app to set maximum volume
 
 %install
 rm -rf %{buildroot}
-#mkdir -p %{buildroot}/etc/systemd/user # Not allowed in harbour
-#cp ../Maxvol/%{name}.service %{buildroot}/etc/systemd/user/
+mkdir -p %{buildroot}/etc/systemd/user
+cp ../Maxvol/%{name}.service %{buildroot}/etc/systemd/user/
 # >> install pre
 # << install pre
 %qmake5_install
 
-#%post
-#systemctl-user enable harbour-maxvol.service # Not allowed in harbour
+%post
+systemctl-user enable harbour-maxvol.service
 # >> install post
 # << install post
 
@@ -71,11 +71,11 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-#/etc/systemd/user/%{name}.service # Not allowed in harbour
+/etc/systemd/user/%{name}.service
 # >> files
 # << files
 
-#%preun
-#systemctl-user disable harbour-maxvol.service # Not allowed in harbour
+%preun
+systemctl-user disable harbour-maxvol.service
 # >> preun
 # << preun

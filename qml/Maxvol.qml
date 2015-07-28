@@ -42,12 +42,12 @@ ApplicationWindow
     property int curVol
     property bool autostart
 
-    property string version: "0.1"
+    property string version: "0.2"
     property string appname: "Max Vol"
     property string appicon: "images/icon.png"
 
     onMaxVolChanged: {
-        console.debug("MaxVol now:" + maxVol)
+        //console.debug("MaxVol now:" + maxVol)
         _volHelper.setMaxVol(maxVol)
         // Call C++ side here to execute the pactl command
     }

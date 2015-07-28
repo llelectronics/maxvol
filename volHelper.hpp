@@ -43,6 +43,8 @@ public slots:
         QString savedVol = settings.value("Volume", "").toString();
         bool isAuto = settings.value("Autostart", "").toBool();
         if (isAuto && !savedVol.isEmpty()){
+            autostart = true;
+            volMax = savedVol;
             setMaxVol(savedVol);
         }
         settings.endGroup();

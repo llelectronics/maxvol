@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
     app->setApplicationName("harbour-maxvol");
-    app->setApplicationVersion("0.1");
+    app->setApplicationVersion("0.2");
 
     volHelper *vHelper = new volHelper();
 

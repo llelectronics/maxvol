@@ -744,14 +744,14 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: setDefault();
             }
-//            TextSwitch {  // Not allowed by harbour
-//                id: isAutostart
-//                text: qsTr("Apply after every reboot")
-//                checked: mainWindow.autostart
-//                onCheckedChanged: {
-//                    mainWindow.autostart = checked
-//                }
-//            }
+            TextSwitch {  // Not allowed by harbour
+                id: isAutostart
+                text: qsTr("Apply after every reboot")
+                checked: mainWindow.autostart
+                onCheckedChanged: {
+                    mainWindow.autostart = checked
+                }
+            }
         }
     }
 }

@@ -39,5 +39,10 @@
         <source>Restore default value</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="749"/>
+        <source>Apply after every reboot</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
