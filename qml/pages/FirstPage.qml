@@ -726,7 +726,7 @@ Page {
                 value: mainWindow.curVol
                 label: value + "%"
                 valueText: value + "%"
-                width: parent.width - Theme.paddingLarge * 2
+                width: parent.width
                 onSliderValueChanged: {
                     mainWindow.maxVol = value
                 }
