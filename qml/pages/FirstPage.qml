@@ -712,11 +712,8 @@ Page {
             PageHeader {
                 title: qsTr("Max Vol")
             }
-            Label {
-                x: Theme.paddingLarge
+            SectionHeader {
                 text: qsTr("Set maximum volume")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
             }
             Slider {
                 id: volMax
